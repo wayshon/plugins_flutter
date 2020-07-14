@@ -45,6 +45,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Welcome to Flutter',
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Plugin example app'),
@@ -62,13 +64,7 @@ class _MyAppState extends State<MyApp> {
                 try {
                   bool success = await PluginsFlutter.share;
                   print('success: $success');
-                  Dialog(
-                    child: Text('success: $success'),
-                  );
                 } on PlatformException {
-                  Dialog(
-                    child: Text('Exception Error'),
-                  );
                   print('Exception Error');
                 }
               },
